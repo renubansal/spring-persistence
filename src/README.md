@@ -4,3 +4,8 @@
 3. Use curl command to test post and get mapping
     curl localhost:8080/demo/add -d firstName=anyName -d lastName=anyName
     curl 'localhost:8080/demo/all' 
+    
+-----------------
+Changed @ResponseBody to ResponseEntity
+After RequestParams to Request Body
+1. use this curl localhost:8080/demo/add -d "{\"firstName\":\"Renu\",\"lastName\":\"Ban\"}" -H "Content-Type:application/json"
