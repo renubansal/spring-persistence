@@ -1,7 +1,7 @@
-package com.example.persistence.controller;
+package com.example.persistence.user.controller;
 
-import com.example.persistence.model.User;
-import com.example.persistence.repository.UserRepository;
+import com.example.persistence.user.model.User;
+import com.example.persistence.user.repository.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,7 +36,7 @@ public class UserControllerTest {
 
     @Test
     public void shouldGetAllUsers() throws Exception {
-        List<User> userList = new ArrayList<User>();
+        List<User> userList = new ArrayList<>();
         userList.add(new User(1, "Eat", "Thrice"));
         userList.add(new User(2, "Sleep", "Twice"));
 

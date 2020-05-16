@@ -1,4 +1,4 @@
-package com.example.persistence.model;
+package com.example.persistence.user.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

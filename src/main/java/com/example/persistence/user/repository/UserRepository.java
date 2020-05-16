@@ -1,6 +1,6 @@
-package com.example.persistence.repository;
+package com.example.persistence.user.repository;
 
-import com.example.persistence.model.User;
+import com.example.persistence.user.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

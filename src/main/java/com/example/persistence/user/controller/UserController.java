@@ -1,6 +1,7 @@
-package com.example.persistence.controller;
+package com.example.persistence.user.controller;
 
-import com.example.persistence.model.User;
+import com.example.persistence.user.model.User;
+import com.example.persistence.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
