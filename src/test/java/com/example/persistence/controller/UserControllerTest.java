@@ -16,10 +16,13 @@ import org.springframework.test.web.servlet.ResultActions;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.hamcrest.Matchers.hasSize;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
@@ -38,8 +41,11 @@ public class UserControllerTest {
         userList.add(new User(2, "Sleep", "Twice"));
 
         when(repository.findAll()).thenReturn(userList);
-        mockMvc.perform(get("/demo/all"))
-                .andExpect(status().isOk());
+        mockMvc.perform(get("/demo/all")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(2)))
+                .andDo(print());
     }
 
     @Test
@@ -56,6 +62,7 @@ public class UserControllerTest {
                 content(sampleToDoJson));
 
         //Assert
-        resultActions.andExpect(status().isCreated());
+        resultActions.andExpect(status().isCreated())
+                .andExpect(jsonPath("$.id").value(1));
     }
 }
