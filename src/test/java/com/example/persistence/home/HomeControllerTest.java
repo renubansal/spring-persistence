@@ -1,5 +1,6 @@
-package com.example.persistence.home.controller;
+package com.example.persistence.home;
 
+import com.example.persistence.home.controller.HomeController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
